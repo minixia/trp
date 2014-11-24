@@ -59,7 +59,7 @@ func main() {
 	flag.Parse()
 
 	if *version {
-		fmt.Printf("Tcp Reverse Proxy(worehole) v%s build by %s\n", Version, runtime.Version())
+		fmt.Printf("Tcp Reverse Proxy v%s build by %s\n", Version, runtime.Version())
 		os.Exit(0)
 	}
 
