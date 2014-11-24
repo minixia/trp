@@ -48,6 +48,7 @@ func die(format string, args ...interface{}) {
 }
 
 func main() {
+	runtime.GOMAXPROCS(runtime.NumCPU())
 	flag.Usage = func() {
 		fmt.Fprintf(os.Stderr, "usage: trp -l LISTEN_ADDR -b BACKENDS\n")
 		fmt.Fprintf(os.Stderr, "command line switches:\n")
