@@ -115,6 +115,9 @@ func ProxyServer(backends []string, listen string){
 			if(er != nil){
 				log.Printf("error: dail to upstream %s, %s\n", backend, er)
 				conn.Close()
+				if upStream != nil {
+					upStream.Close()
+				}
 				return
 			}
 			sessionID := genSessionId(conn.RemoteAddr().String(), backend)
